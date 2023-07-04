@@ -17,11 +17,10 @@ import (
 	"github.com/google/uuid"
 )
 
-const API_TOKEN = "269884a8-db69-4dcd-a47f-003b2498a72e"
-
 type QRCode struct {
 	ID         string `json:"id"`
 	Source     string `json:"source"`
+	Host       string `json:"host"`
 	UpdateTime int64  `json:"update_time,omitifempty"`
 	Authorized bool   `json:"authorized"`
 	signal     chan struct{}
@@ -45,7 +44,6 @@ func (o *HttpServer) Run(wwwdir string) {
 
 	workDir, _ := os.Getwd()
 	filesDir := http.Dir(filepath.Join(workDir, wwwdir))
-	o.FileServer(o.r, "/www/*", filesDir)
 
 	o.r.Route("/qrcode", func(r chi.Router) {
 
@@ -56,7 +54,9 @@ func (o *HttpServer) Run(wwwdir string) {
 		})
 	})
 
-	http.ListenAndServe(":35000", o.r)
+	o.FileServer(o.r, "/*", filesDir)
+
+	http.ListenAndServe(BIND_ADDRESS, o.r)
 }
 
 func (o *HttpServer) qrcodeCtx(next http.Handler) http.Handler {
@@ -97,6 +97,7 @@ func (o *HttpServer) PutQRCode(w http.ResponseWriter, r *http.Request) {
 	}
 
 	qrcode.Source = data.Source
+	qrcode.Host = data.Host
 	qrcode.UpdateTime = time.Now().UnixMilli()
 	o.QRCodes.Store(id, qrcode)
 
@@ -158,10 +159,12 @@ func (o *HttpServer) _getQRCode(id string) *QRCode {
 
 func (o *HttpServer) FileServer(r chi.Router, path string, root http.FileSystem) {
 	r.Get(path, func(w http.ResponseWriter, r *http.Request) {
-		if strings.HasSuffix(r.URL.Path, "/") {
-			http.NotFound(w, r)
-			return
-		}
+		/*if strings.HasSuffix(r.URL.Path, "/") {
+			r.URL.Parse(
+			r.URL.Path += "index.html"
+			//http.NotFound(w, r)
+			//return
+		}*/
 
 		rctx := chi.RouteContext(r.Context())
 		pathPrefix := strings.TrimSuffix(rctx.RoutePattern(), "/*")

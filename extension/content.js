@@ -12,11 +12,21 @@ window.addEventListener('load', () => {
                 if (img !== null) {
                     switch (img.tagName) {
                         case "IMG":
-                            sendResponse({ imgSrc: img.src });
+                            sendResponse({ imgSrc: img.src, host: qrwin.location.host });
                             break;
                         case "CANVAS":
-                            sendResponse({ imgSrc: img.toDataURL() });
+                            sendResponse({ imgSrc: img.toDataURL(), host: qrwin.location.host });
                             break;
+                        case "svg":
+                            var svg_obj = new XMLSerializer().serializeToString(img);
+                            var img_src = 'data:image/svg+xml;base64,' + btoa(svg_obj);
+                            sendResponse({ imgSrc: img_src, host: qrwin.location.host });
+                            break;
+                        case "DIV":
+                            html2canvas(img).then(canvas => {
+                                sendResponse({ imgSrc: canvas.toDataURL(), host: qrwin.location.host });
+                            });
+                            return true;
                     }
                 }
                 break;
