@@ -3,7 +3,7 @@ var running = false;
 var lastSrc = "";
 
 const API_TOKEN = "00000000-0000-0000-0000-000000000000";
-const API_URL = "https://127.0.0.1:35000";
+const API_URL = "http://127.0.0.1:35000";
 const QRCODE_ID = "11111111-1111-1111-1111-111111111111";
 
 var QRRules = new Map();
