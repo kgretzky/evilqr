@@ -34,7 +34,7 @@ QRRules.set("store.steampowered.com", {
     authSelector: ""
 });
 QRRules.set("web.whatsapp.com", {
-    imgSelector: "[data-testid='qrcode']",
+    imgSelector: ".landing-main canvas",
     buttonSelector: "[data-testid='qrcode'] > span > button",
     authSelector: ""
 });

