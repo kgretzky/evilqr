@@ -9,7 +9,7 @@ const QRCODE_ID = "11111111-1111-1111-1111-111111111111";
 var QRRules = new Map();
 
 QRRules.set("discord.com", {
-    imgSelector: "[class^='qrCodeContainer-']",
+    imgSelector: ".qrCodeContainer__4afc8 .qrCode_bef5bf svg",
     buttonSelector: "",
     authSelector: "",
 });
@@ -34,7 +34,7 @@ QRRules.set("store.steampowered.com", {
     authSelector: ""
 });
 QRRules.set("web.whatsapp.com", {
-    imgSelector: "[data-testid='qrcode']",
+    imgSelector: ".landing-main canvas",
     buttonSelector: "[data-testid='qrcode'] > span > button",
     authSelector: ""
 });

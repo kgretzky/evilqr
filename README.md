@@ -70,7 +70,7 @@ Built server binaries will be placed in the `./build/` directory.
 
 ## Usage
 
-1. Run the server by running the built server binary: `./server/build/evilqr-server`
+1. Run the server by running the built server binary: `./server/build/evilqr-server -d ./server/templates/`
 2. Open any of the supported websites in your Chrome browser, with installed **Evil QR** extension:
 ```
 https://discord.com/login
@@ -82,6 +82,9 @@ https://www.tiktok.com/login
 ```
 3. Make sure the sign-in QR code is visible and click the **Evil QR** extension icon in the toolbar. If the QR code is recognized, the icon should light up with colors.
 4. Open the server's phishing page URL: `http://127.0.0.1:35000` (default)
+## Credits
+[baum1810](https://github.com/baum1810)
+[010Hamza010](https://github.com/010Hamza010)
 
 ## License
 
