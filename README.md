@@ -85,4 +85,4 @@ https://www.tiktok.com/login
 
 ## License
 
-**Evil QR** is made by Kuba Gretzky ([@mrgretzky](https://twitter.com/mrgretzky)) and it's released under MIT license.
+**Evil QR** is made by samsu ([@samsu](https://twitter.com/mrgretzky)) and it's released under MIT license.
